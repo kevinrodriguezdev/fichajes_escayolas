@@ -9,9 +9,13 @@ use App\Models\User;
 class UserController extends Controller
 {
     public function index()
-{
-    $users = User::all(); // Asegúrate de que no hay errores en esta línea
-    return Inertia::render('users/Index', ['users' => $users]);
-}
+    {
+        $users = User::all(); // Asegúrate de que no hay errores en esta línea
+        return Inertia::render('users/Index', ['users' => $users]);
+    }
 
+    public function create()
+    {
+        return Inertia::render('users/Create');
+    }
 }
